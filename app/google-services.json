@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "587008186318",
+    "project_id": "l4tutor2",
+    "storage_bucket": "l4tutor2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:587008186318:android:74a6fa92d3ba13f9633d9f",
+        "android_client_info": {
+          "package_name": "com.example.l4tutor2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "587008186318-3fdlm0ccuifuas856olh3im0gunmjo7v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIi4pTFGPj3d9FATxQFWU-soo-zHAuOyg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "587008186318-3fdlm0ccuifuas856olh3im0gunmjo7v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
