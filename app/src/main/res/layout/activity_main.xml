@@ -7,21 +7,60 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:layout_width="183dp"
+        android:layout_height="34dp"
+        android:text="ברוכים הבאים ל-L4Tutor"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="#DD2323"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.094" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="109dp"
+        android:layout_height="40dp"
+        android:fontFamily="sans-serif"
+        android:text="משתמש רשום"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textSize="16sp"
+        tools:layout_editor_absoluteX="151dp"
+        tools:layout_editor_absoluteY="164dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="128dp"
+        android:layout_height="56dp"
+        android:text="סטודנט"
+        tools:layout_editor_absoluteX="143dp"
+        tools:layout_editor_absoluteY="218dp" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="128dp"
+        android:layout_height="56dp"
+        android:text="מתרגל"
+        tools:layout_editor_absoluteX="143dp"
+        tools:layout_editor_absoluteY="296dp" />
 
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="132dp"
+        android:layout_height="50dp"
         android:onClick="onClickRegister"
         android:text="@string/RegisterBtn"
-        tools:layout_editor_absoluteX="247dp"
-        tools:layout_editor_absoluteY="488dp" />
+        tools:layout_editor_absoluteX="139dp"
+        tools:layout_editor_absoluteY="463dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="211dp"
+        android:layout_height="30dp"
+        android:text="אם אינך רשום, אנא הרשם כאן "
+        tools:layout_editor_absoluteX="86dp"
+        tools:layout_editor_absoluteY="433dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
