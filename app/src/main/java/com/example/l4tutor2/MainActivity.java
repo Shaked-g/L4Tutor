@@ -15,22 +15,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        cb1 = findViewById(R.id.checkBox);
-        cb2 = findViewById(R.id.checkBox2);
-//        public void onClick(View v){
-//            if (cb1.isChecked()) {
-//                if (cb2.isChecked()) {
-//                    cb1.setChecked(false);
-//                }
-//            }
-//            if (cb2.isChecked()) {
-//                if (cb1.isChecked()) {
-//                    cb2.setChecked(false);
-//                }
-//
-//
-//            }
-//        }
+
+
     }
 
     public void onClickRegister(View view) {

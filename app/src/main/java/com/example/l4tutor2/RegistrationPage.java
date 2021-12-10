@@ -7,6 +7,7 @@ import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -17,15 +18,17 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class RegistrationPage extends AppCompatActivity {
     private FirebaseAuth mAuth;
+    CheckBox cb1,cb2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration_page);
         mAuth = FirebaseAuth.getInstance();
+        cb1 = findViewById(R.id.checkBox);
+        cb2 = findViewById(R.id.checkBox2);
+
     }
-
-
 
 
 
