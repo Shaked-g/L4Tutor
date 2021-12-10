@@ -19,4 +19,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intentRegister = new Intent(MainActivity.this, RegistrationPage.class);
         startActivity(intentRegister);
     }
+
+    public void studentBtn(View view) {
+
+        Intent intentLogging = new Intent(MainActivity.this, LoginPage.class);
+        startActivity(intentLogging);
+    }
 }

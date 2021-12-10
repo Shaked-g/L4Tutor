@@ -28,6 +28,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginEnd="142dp"
         android:layout_marginBottom="12dp"
+        android:onClick="studentBtn"
         android:text="סטודנט"
         app:layout_constraintBottom_toTopOf="@+id/button4"
         app:layout_constraintEnd_toEndOf="parent"
