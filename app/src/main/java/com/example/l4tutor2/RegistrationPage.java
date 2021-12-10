@@ -27,6 +27,7 @@ public class RegistrationPage extends AppCompatActivity {
 
 
 
+<<<<<<< Updated upstream
     public void RegisterFormBtn(View view) {
         EditText emailEditText = findViewById(R.id.editTextEmail);
         EditText passwordEditText = findViewById(R.id.editTextPassword);
@@ -52,4 +53,24 @@ public class RegistrationPage extends AppCompatActivity {
         Intent intentRegister = new Intent(RegistrationPage.this, MainActivity.class);
         startActivity(intentRegister);
     }
+=======
+//    public void RegisterFormBtn(View view) {
+//        EditText emailEditText = findViewById(R.id.editTextEmail);
+//        EditText passwordEditText = findViewById(R.id.editTextPassword);
+//        mAuth.createUserWithEmailAndPassword(emailEditText.getText().toString(), passwordEditText.getText().toString())
+//                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+//                    public void onComplete(@NonNull Task<AuthResult> task) {
+//                        if (task.isSuccessful()) {
+//                            Toast.makeText(RegistrationPage.this,"Registration works",Toast.LENGTH_LONG).show();
+//
+//
+//                        } else {
+//                            Toast.makeText(RegistrationPage.this,"Registration Failed",Toast.LENGTH_LONG).show();
+//
+//                        }
+//                    }
+//                });
+//
+//    }
+>>>>>>> Stashed changes
 }
