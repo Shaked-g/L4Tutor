@@ -41,12 +41,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-<<<<<<< Updated upstream
     public void studentBtn(View view) {
 
         Intent intentLogging = new Intent(MainActivity.this, LoginPage.class);
         startActivity(intentLogging);
     }
-=======
->>>>>>> Stashed changes
 }
