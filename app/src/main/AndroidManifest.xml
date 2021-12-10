@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.L4Tutor2">
         <activity
+            android:name=".LoginPage"
+            android:exported="false" />
+        <activity
             android:name=".RegistrationPage"
             android:exported="false" />
         <activity

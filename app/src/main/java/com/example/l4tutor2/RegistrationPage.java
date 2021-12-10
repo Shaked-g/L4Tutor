@@ -3,6 +3,8 @@ package com.example.l4tutor2;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ActionBar;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -42,5 +44,12 @@ public class RegistrationPage extends AppCompatActivity {
                     }
                 });
 
+    }
+
+    // Back Button
+    public void BackBtnReg(View view) {
+
+        Intent intentRegister = new Intent(RegistrationPage.this, MainActivity.class);
+        startActivity(intentRegister);
     }
 }
