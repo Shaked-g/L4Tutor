@@ -7,6 +7,7 @@ import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -22,6 +23,7 @@ import java.util.ArrayList;
 
 public class RegistrationPage extends AppCompatActivity {
     private FirebaseAuth mAuth;
+    CheckBox cb1,cb2;
     private DatabaseReference mDatabase;
 //    ArrayList<User> userArrayyList = new ArrayList<User>();
 
@@ -31,13 +33,11 @@ public class RegistrationPage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration_page);
         mAuth = FirebaseAuth.getInstance();
-
-
-        // Write a message to the database
-        //FirebaseDatabase database = FirebaseDatabase.getInstance();
-
+        cb1 = findViewById(R.id.checkBox);
+        cb2 = findViewById(R.id.checkBox2);
 
     }
+
 
 
     public void RegisterFormBtn(View view) {
