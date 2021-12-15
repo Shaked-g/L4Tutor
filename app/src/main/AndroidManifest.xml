@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.L4Tutor2">
         <activity
+            android:name=".MoreInfo"
+            android:exported="false" />
+        <activity
             android:name=".Feed"
             android:exported="false" />
         <activity

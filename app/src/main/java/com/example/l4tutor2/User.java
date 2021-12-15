@@ -7,9 +7,8 @@ public class User {
     private String EmailAddress;
     private String PhoneNumber;
     private String UserType;  // "student" or "teacher"
+    private String Password;
     boolean MeetingTypePreference; // zoom or frontal
-
-
 
     private int DesiredPayment;
     private Courses DesiredCourses;
@@ -28,9 +27,12 @@ public class User {
         // Default constructor required for calls to DataSnapshot.getValue(User.class)
     }
 
-    public User(String username, String email) {
-        this.FirstName = username;
-        this.EmailAddress = email;
+
+    public User(String emailString, String password, String name, String familyName) {
+        this.EmailAddress = emailString;
+        this.Password = password;
+        this.FirstName = name;
+        this.LastName = familyName;
     }
 
     public String getUserType() {
@@ -91,13 +93,12 @@ public class User {
     }
 
 
-    public String getLastName() {
-        return LastName;
-    }
+    public String getLastName() { return LastName; }
 
     public void setLastName(String lastName) {
         LastName = lastName;
     }
+
 
     public Courses getDesiredCourses() {
         return DesiredCourses;
@@ -106,5 +107,15 @@ public class User {
     public void setDesiredCourses(Courses desiredCourses) {
         DesiredCourses = desiredCourses;
     }
+
+
+    public String getPassword() {
+        return Password;
+    }
+
+    public void setPassword(String password) {
+        Password = password;
+    }
+
 
 }
