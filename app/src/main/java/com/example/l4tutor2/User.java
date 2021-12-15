@@ -20,6 +20,19 @@ public class User {
         Discrete_Mathematics, Logic_and_set_theory, Java, Data_Structures
     }
 
+    Courses newCourse = Courses.Linear_Algebra1; // example
+
+
+    // Constructor //
+    public User() {
+        // Default constructor required for calls to DataSnapshot.getValue(User.class)
+    }
+
+    public User(String username, String email) {
+        this.FirstName = username;
+        this.EmailAddress = email;
+    }
+
     public String getUserType() {
         return UserType;
     }

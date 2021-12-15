@@ -3,6 +3,7 @@ package com.example.l4tutor2;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -36,8 +37,11 @@ public class LoginPage extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Toast.makeText(LoginPage.this,"Login works",Toast.LENGTH_LONG).show();
                             FirebaseUser user = mAuth.getCurrentUser();
+
+                            Toast.makeText(LoginPage.this,"Login works"+user,Toast.LENGTH_LONG).show();
+                            Intent intentFeed = new Intent(LoginPage.this, Feed.class);
+                            startActivity(intentFeed);
 
                         } else {
                             // If sign in fails, display a message to the user.
