@@ -81,6 +81,8 @@ public class RegistrationPage extends AppCompatActivity {
 
         if(cb1.isChecked()){
             user.setUserType("student");
+            user.setDesiredCourses(User.Courses.Linear_Algebra1);
+            user.setDesiredCourses(User.Courses.Number_Theory);
         }else user.setUserType("tutor");
 
         mAuth.createUserWithEmailAndPassword(userEmail, userPassword)

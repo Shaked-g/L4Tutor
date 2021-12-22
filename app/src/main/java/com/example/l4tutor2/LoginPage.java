@@ -52,8 +52,8 @@ public class LoginPage extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             FirebaseUser user = mAuth.getCurrentUser();
                             String userid = user.getUid();
-                            Toast.makeText(LoginPage.this,"Login works "+user,Toast.LENGTH_LONG).show();
-                            Toast.makeText(LoginPage.this,"User ID "+userid,Toast.LENGTH_LONG).show();
+//                            Toast.makeText(LoginPage.this,"Login works "+user,Toast.LENGTH_LONG).show();
+//                            Toast.makeText(LoginPage.this,"User ID "+userid,Toast.LENGTH_LONG).show();
 
                             // filter screen by userType from database
                             mDatabase.child(userid).child("userType").get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
@@ -64,7 +64,7 @@ public class LoginPage extends AppCompatActivity {
                                     }
                                     else {
 
-                                        Toast.makeText(LoginPage.this,"User Type "+ task.getResult().getValue(),Toast.LENGTH_LONG).show();
+                                       // Toast.makeText(LoginPage.this,"User Type "+ task.getResult().getValue(),Toast.LENGTH_LONG).show();
                                         if ( task.getResult().getValue() == "student") {
                                             Intent FilterFeed = new Intent(LoginPage.this, FilterFeed.class);
                                             startActivity(FilterFeed);

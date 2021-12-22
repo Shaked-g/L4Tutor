@@ -1,6 +1,14 @@
 package com.example.l4tutor2;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class User {
+    public enum Courses {
+        Linear_Algebra1, Linear_Algebra2, Number_Theory, Infinitesimal_Calculus,
+        Discrete_Mathematics, Logic_and_set_theory, Java, Data_Structures
+    }
 
     private String FirstName;
     private String LastName;
@@ -11,13 +19,12 @@ public class User {
     boolean MeetingTypePreference; // zoom or frontal
 
     private int DesiredPayment;
-    private Courses DesiredCourses;
+    private List<Courses> DesiredCourses = new ArrayList<>();
 
 
-    public enum Courses {
-        Linear_Algebra1, Linear_Algebra2, Number_Theory, Infinitesimal_Calculus,
-        Discrete_Mathematics, Logic_and_set_theory, Java, Data_Structures
-    }
+
+
+
 
     Courses newCourse = Courses.Linear_Algebra1; // example
 
@@ -100,12 +107,12 @@ public class User {
     }
 
 
-    public Courses getDesiredCourses() {
+    public List getDesiredCourses() {
         return DesiredCourses;
     }
 
     public void setDesiredCourses(Courses desiredCourses) {
-        DesiredCourses = desiredCourses;
+        this.DesiredCourses.add(desiredCourses);
     }
 
 
