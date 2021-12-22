@@ -91,8 +91,7 @@ public class RegistrationPage extends AppCompatActivity {
                             // Sign in success
                             Toast.makeText(RegistrationPage.this, "Registration works", Toast.LENGTH_LONG).show();
                             FirebaseUser fireUser = mAuth.getCurrentUser();
-
-                            String keyid = mDatabase.push().getKey();
+                            String keyid = fireUser.getUid();
                             mDatabase.child(keyid).setValue(user); //adding user info to database
 
                             //move to MoreInfo page.
@@ -121,16 +120,6 @@ public class RegistrationPage extends AppCompatActivity {
             }
         }
     }
-
-
-
-//    // Back Button
-//    public void BackBtnReg(View view) {
-//
-//        Intent intentRegister = new Intent(RegistrationPage.this, MainActivity.class);
-//        startActivity(intentRegister);
-//    }
-
 
 
 }
