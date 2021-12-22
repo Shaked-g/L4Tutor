@@ -6,7 +6,7 @@ public class User {
     private String LastName;
     private String EmailAddress;
     private String PhoneNumber;
-    private String UserType;  // "student" or "teacher"
+    private String UserType;  // "student" or "tutor"
     private String Password;
     boolean MeetingTypePreference; // zoom or frontal
 

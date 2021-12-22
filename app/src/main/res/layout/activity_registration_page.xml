@@ -107,23 +107,29 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:text="Student"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/extInputLayout4" />
-
-    <CheckBox
         android:id="@+id/checkBox2"
         android:layout_width="80dp"
         android:layout_height="48dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="10dp"
+        android:checked="false"
+        android:clickable="true"
+        android:duplicateParentState="true"
         android:text="Tutor"
         app:layout_constraintStart_toEndOf="@+id/checkBox"
+        app:layout_constraintTop_toBottomOf="@+id/extInputLayout4" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:checked="true"
+        android:clickable="true"
+        android:duplicateParentState="false"
+        android:text="Student"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/extInputLayout4" />
 
     <Button
