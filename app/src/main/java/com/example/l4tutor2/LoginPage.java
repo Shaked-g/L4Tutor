@@ -52,7 +52,6 @@ public class LoginPage extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             FirebaseUser user = mAuth.getCurrentUser();
                             String userid = user.getUid();
-//                            Toast.makeText(LoginPage.this,"Login works "+user,Toast.LENGTH_LONG).show();
 //                            Toast.makeText(LoginPage.this,"User ID "+userid,Toast.LENGTH_LONG).show();
 
                             // filter screen by userType from database
@@ -63,13 +62,14 @@ public class LoginPage extends AppCompatActivity {
                                         Log.e("firebase", "Error getting data", task.getException());
                                     }
                                     else {
+                                        String currUserType = task.getResult().getValue().toString();
 
-                                       // Toast.makeText(LoginPage.this,"User Type "+ task.getResult().getValue(),Toast.LENGTH_LONG).show();
-                                        if ( task.getResult().getValue() == "student") {
+                                        if (currUserType.equals("student")) {
                                             Intent FilterFeed = new Intent(LoginPage.this, FilterFeed.class);
                                             startActivity(FilterFeed);
                                         }
                                         else{
+
                                             Intent intentFeed = new Intent(LoginPage.this, Feed.class);
                                             startActivity(intentFeed);
                                         }

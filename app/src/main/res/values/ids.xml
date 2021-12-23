@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="OOP_checkBox" type="id" />
+    <item name="Data_checkBox" type="id" />
+    <item name="Java_checkBox" type="id" />
+    <item name="Logic_checkBox" type="id" />
+    <item name="infi1_checkBox" type="id" />
+    <item name="Discrete_checkBox" type="id" />
+    <item name="Infi2_checkBox" type="id" />
+    <item name="linear_Algebra2_checkBox" type="id" />
+    <item name="Number_Theory_checkBox" type="id" />
+    <item name="Linear_Algebra1_checkBox" type="id" />
+    <item name="textView6" type="id" />
+    <item name="PriceInputLayout" type="id" />
+    <item name="PhonetextInputEditText" type="id" />
+    <item name="button3" type="id" />
+</resources>
