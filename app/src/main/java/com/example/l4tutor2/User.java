@@ -117,7 +117,7 @@ public class User {
 
 
     public List getDesiredCourses() {
-        return DesiredCourses;
+        return this.DesiredCourses;
     }
 
     public void setDesiredCourses(Courses desiredCourses) {

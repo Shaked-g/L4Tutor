@@ -76,8 +76,8 @@ public class RegistrationPage extends AppCompatActivity {
 
         if(cb1.isChecked()){
             user.setUserType("student");
-            user.setDesiredCourses(User.Courses.Linear_Algebra1);
-            user.setDesiredCourses(User.Courses.Number_Theory);
+//            user.setDesiredCourses(User.Courses.Linear_Algebra1);
+//            user.setDesiredCourses(User.Courses.Number_Theory);
         }else user.setUserType("tutor");
 
 
@@ -94,8 +94,9 @@ public class RegistrationPage extends AppCompatActivity {
                             mDatabase.child(keyid).setValue(user); //adding user info to database
                             if(user.getUserType() == "tutor") {
                                 //move to MoreInfo page.
-                                Intent intentFeed = new Intent(RegistrationPage.this, MoreInfo.class);
-                                startActivity(intentFeed);
+                                Intent intentMoreInfo = new Intent(RegistrationPage.this, MoreInfo.class);
+                                intentMoreInfo.putExtra("keyid",keyid);
+                                startActivity(intentMoreInfo);
                             }
 
                         } else {
