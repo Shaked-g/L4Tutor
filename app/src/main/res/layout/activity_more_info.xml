@@ -6,13 +6,169 @@
     android:layout_height="match_parent"
     tools:context=".MoreInfo">
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/textInputEditText5"
-        android:layout_width="match_parent"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/PriceInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="351dp"
         android:layout_height="52dp"
+        android:layout_marginStart="16dp"
+        android:hint="Phone Number"
+        app:counterEnabled="true"
+        app:counterMaxLength="8"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/InputLayout"
+        app:prefixText="05">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/PhonetextInputEditText"
+            android:layout_width="match_parent"
+            android:layout_height="53dp"
+            android:layout_marginTop="400dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/InputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="349dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="16dp"
         android:hint="Price"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="139dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/infi1_checkBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/PricetextInputEditText"
+            android:layout_width="match_parent"
+            android:layout_height="52dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <CheckBox
+        android:id="@+id/OOP_checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="17dp"
+        android:checked="false"
+        android:clickable="true"
+        android:duplicateParentState="false"
+        android:text="מונחה עצמים"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Data_checkBox" />
+
+    <CheckBox
+        android:id="@+id/Data_checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="28dp"
+        android:checked="false"
+        android:clickable="true"
+        android:duplicateParentState="false"
+        android:text="מבני נתונים"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <CheckBox
+        android:id="@+id/Java_checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="11dp"
+        android:checked="false"
+        android:clickable="true"
+        android:duplicateParentState="false"
+        android:text="מבוא למדעי המחשב"
+        app:layout_constraintStart_toEndOf="@+id/infi1_checkBox"
+        app:layout_constraintTop_toBottomOf="@+id/Logic_checkBox" />
+
+    <CheckBox
+        android:id="@+id/Logic_checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="13dp"
+        android:checked="false"
+        android:clickable="true"
+        android:duplicateParentState="false"
+        android:text="לוגיקה ותורת הקבוצות"
+        app:layout_constraintStart_toEndOf="@+id/Number_Theory_checkBox"
+        app:layout_constraintTop_toBottomOf="@+id/OOP_checkBox" />
+
+    <CheckBox
+        android:id="@+id/Discrete_checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:clickable="true"
+        android:duplicateParentState="false"
+        android:text="מבנים דיסקרטים"
+        app:layout_constraintEnd_toStartOf="@+id/OOP_checkBox"
+        app:layout_constraintStart_toEndOf="@+id/linear_Algebra2_checkBox"
+        app:layout_constraintTop_toBottomOf="@+id/Infi2_checkBox" />
+
+    <CheckBox
+        android:id="@+id/Infi2_checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="6dp"
+        android:checked="false"
+        android:clickable="true"
+        android:duplicateParentState="false"
+        android:text="אינפיניטיסימלי2"
+        app:layout_constraintEnd_toStartOf="@+id/Data_checkBox"
+        app:layout_constraintStart_toEndOf="@+id/Linear_Algebra1_checkBox"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <CheckBox
+        android:id="@+id/infi1_checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:checked="false"
+        android:clickable="true"
+        android:duplicateParentState="false"
+        android:text="אינפיניטיסימלי1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Number_Theory_checkBox" />
+
+    <CheckBox
+        android:id="@+id/Number_Theory_checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="13dp"
+        android:checked="false"
+        android:clickable="true"
+        android:duplicateParentState="false"
+        android:text="תורת המספרים"
+        app:layout_constraintEnd_toStartOf="@+id/Logic_checkBox"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear_Algebra2_checkBox" />
+
+    <CheckBox
+        android:id="@+id/linear_Algebra2_checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:checked="false"
+        android:clickable="true"
+        android:duplicateParentState="false"
+        android:text="אלגברה לינארית2"
+        app:layout_constraintEnd_toStartOf="@+id/Discrete_checkBox"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Linear_Algebra1_checkBox" />
+
+    <CheckBox
+        android:id="@+id/Linear_Algebra1_checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:checked="false"
+        android:clickable="true"
+        android:duplicateParentState="false"
+        android:text="אלגברה לינארית1"
+        app:layout_constraintEnd_toStartOf="@+id/Infi2_checkBox"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <TextView
         android:id="@+id/textView4"
@@ -22,7 +178,32 @@
         android:layout_marginEnd="16dp"
         android:text="הכנס את הפרטים הבאים : "
         android:textColor="#F10000"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="20dp"
+        android:text="איזה קורסים את\ה מלמד?"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="25dp"
+        android:onClick="RegisterMoreInfo"
+        android:text="הירשם !"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/PriceInputLayout" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

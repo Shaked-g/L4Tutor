@@ -6,8 +6,8 @@ import java.util.List;
 
 public class User {
     public enum Courses {
-        Linear_Algebra1, Linear_Algebra2, Number_Theory, Infinitesimal_Calculus,
-        Discrete_Mathematics, Logic_and_set_theory, Java, Data_Structures
+        Linear_Algebra1, Linear_Algebra2, Number_Theory, Infinitesimal_Calculus1,Infinitesimal_Calculus2,
+        Discrete_Mathematics, Logic_and_set_theory, Java, Data_Structures,Object_Oriented,
     }
 
     private String FirstName;
@@ -40,6 +40,15 @@ public class User {
         this.Password = password;
         this.FirstName = name;
         this.LastName = familyName;
+    }
+
+    public User(User tutor,String phoneNumber,int price){
+        this.FirstName = tutor.getFirstName();
+        this.LastName = tutor.getLastName();
+        this.EmailAddress = tutor.getEmailAddress();
+        this.Password = tutor.getPassword();
+        this.PhoneNumber = phoneNumber;
+        this.DesiredPayment = price;
     }
 
     public String getUserType() {
