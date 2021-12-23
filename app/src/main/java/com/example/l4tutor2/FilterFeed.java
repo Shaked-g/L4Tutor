@@ -22,7 +22,8 @@ public class FilterFeed extends AppCompatActivity {
 
     }
 
-    public void SearchButton (View view){
+// moves to feed
+    public void SearchBTN(View view) {
         Intent Feed = new Intent(FilterFeed.this, Feed.class);
         startActivity(Feed);
     }
