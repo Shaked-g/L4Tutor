@@ -7,6 +7,21 @@
     tools:context=".FilterFeed">
 
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/InputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="349dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="16dp"
+        android:hint="Price"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/infi1_checkBox">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/PricetextInputEditText2"
+            android:layout_width="match_parent"
+            android:layout_height="52dp" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/textView4"
@@ -165,12 +180,12 @@
         android:id="@+id/searchBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="36dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="28dp"
         android:onClick="SearchBTN"
         android:text="חפש"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Java_checkBox" />
+        app:layout_constraintTop_toBottomOf="@+id/InputLayout" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

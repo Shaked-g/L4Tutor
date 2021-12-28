@@ -40,7 +40,7 @@ public class RegistrationPage extends AppCompatActivity {
         cb2 = findViewById(R.id.checkBox2);
         emailEditText = findViewById(R.id.EmailInput);
         passwordEditText = findViewById(R.id.PassInput);
-        userNameEditText = findViewById(R.id.PricetextInputEditText);
+        userNameEditText = findViewById(R.id.PricetextInputEditText2);
         userFamilyNameEditText = findViewById(R.id.textInputEditText2);
         database = FirebaseDatabase.getInstance("https://l4tutor2-default-rtdb.europe-west1.firebasedatabase.app/");
         mDatabase = database.getReference(USERS);
@@ -98,10 +98,17 @@ public class RegistrationPage extends AppCompatActivity {
                                 intentMoreInfo.putExtra("keyid",keyid);
                                 startActivity(intentMoreInfo);
                             }
+                            if(user.getUserType() == "student") {
+                                //move to FilterFeed page.
+                                Intent intentFilterFeed = new Intent(RegistrationPage.this, FilterFeed.class);
+                                //intentMoreInfo.putExtra("keyid",keyid);
+                                startActivity(intentFilterFeed);
+                            }
 
                         } else {
                             // If sign in fails, display a message to the user.
                             Toast.makeText(RegistrationPage.this, "Registration Failed", Toast.LENGTH_LONG).show();
+
                         }
                     }
                 });
