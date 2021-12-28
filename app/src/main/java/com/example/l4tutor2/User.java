@@ -56,7 +56,7 @@ public class User {
     }
 
     public void setUserType(String userType) {
-        UserType = userType;
+        this.UserType = userType;
     }
 
     private boolean CreateTutor(){
@@ -69,7 +69,7 @@ public class User {
     }
 
     public void setFirstName(String firstName) {
-        FirstName = firstName;
+        this.FirstName = firstName;
     }
 
 

@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
@@ -18,51 +19,54 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
-public class ListAdapter extends ArrayAdapter<User> {
+public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder>{
 
-    private DatabaseReference mDatabase;
-    private FirebaseDatabase database;
-    private static final String USERS = "users";
-    public String keyid;
-    private FirebaseAuth mAuth;
+    private ArrayList<User> userList;
 
-    public ListAdapter(Context context, ArrayList<User> userArrayList){
-        super(context,R.layout.list_item,userArrayList);
-
-
-        database = FirebaseDatabase.getInstance("https://l4tutor2-default-rtdb.europe-west1.firebasedatabase.app/");
-        mDatabase = database.getReference(USERS);
-        mAuth = FirebaseAuth.getInstance();
-
-        /**
-         * TODO Not sure where i need to declare the DB - So we need to find out !!
-         */
-
+    public ListAdapter(ArrayList<User> userList) {
+        this.userList = userList;
     }
+
+
+
 
     @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+    public ListAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_feed,parent,false);
+        return new MyViewHolder(v);
 
-        User user = getItem(position);
+    }
 
-        if(convertView == null){
+    @Override
+    public void onBindViewHolder(@NonNull ListAdapter.MyViewHolder holder, int position) {
+        User user = userList.get(position);
+        holder.firstName.setText(user.getFirstName());
+        holder.lastName.setText(user.getLastName());
+        holder.courses.setText((CharSequence) user.getDesiredCourses());
+        holder.price.setText(user.getDesiredPayment());
+        holder.phoneNumber.setText(user.getPhoneNumber());
 
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_item,parent,false);
 
+    }
+
+    @Override
+    public int getItemCount() {
+        return userList.size();
+    }
+
+    public static class MyViewHolder extends RecyclerView.ViewHolder{
+
+        public TextView firstName, lastName, courses, phoneNumber, price;
+
+
+        public MyViewHolder(@NonNull View itemView) {
+            super(itemView);
+            firstName = itemView.findViewById(R.id.textView_firstname);
+            lastName = itemView.findViewById(R.id.textView_lastName);
+            courses = itemView.findViewById(R.id.textView_courses);
+            phoneNumber = itemView.findViewById(R.id.textView_phoneNumber);
+            price = itemView.findViewById(R.id.textView_price);
         }
-
-        ImageView image = convertView.findViewById(R.id.Profile_pic);
-        TextView firstName = convertView.findViewById(R.id.TutorFirstName);
-        TextView lastName = convertView.findViewById(R.id.TutorLastName);
-        TextView course = convertView.findViewById(R.id.courses);
-        TextView price = convertView.findViewById(R.id.Payment);
-
-        /**
-         * TODO Get Tutor Info from DB to these views
-         */
-
-
-        return super.getView(position,convertView,parent);
     }
 }
