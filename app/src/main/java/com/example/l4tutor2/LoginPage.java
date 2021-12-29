@@ -60,20 +60,16 @@ public class LoginPage extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<DataSnapshot> task) {
                                     if (!task.isSuccessful()) {
                                         Log.e("firebase", "Error getting data", task.getException());
-                                    }
-                                    else {
+                                    } else {
                                         String currUserType = task.getResult().getValue().toString();
-
+                                        Log.e("curren", "is " + currUserType);
                                         if (currUserType.equals("student")) {
                                             Intent FilterFeed = new Intent(LoginPage.this, FilterFeed.class);
                                             startActivity(FilterFeed);
-                                        }
-                                        else{
-
+                                        } else {
                                             Intent intentFeed = new Intent(LoginPage.this, Feed.class);
                                             startActivity(intentFeed);
                                         }
-
 
 
                                     }
@@ -81,13 +77,10 @@ public class LoginPage extends AppCompatActivity {
                             });
 
 
-
-
-
                         } else {
                             // If sign in fails, display a message to the user.
                             // Log.w(TAG, "signInWithEmail:failure", task.getException());
-                            Toast.makeText(LoginPage.this,"Login does NOT work",Toast.LENGTH_LONG).show();
+                            Toast.makeText(LoginPage.this, "Login does NOT work", Toast.LENGTH_LONG).show();
 
 
                         }

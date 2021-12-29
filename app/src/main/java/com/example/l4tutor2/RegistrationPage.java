@@ -21,7 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class RegistrationPage extends AppCompatActivity {
     private EditText emailEditText, passwordEditText, userNameEditText, userFamilyNameEditText;
-    private CheckBox cb1,cb2;
+    private CheckBox cb1, cb2;
     private static final String USERS = "users";
     private String userEmail, userPassword, userName, userFamilyName;
 
@@ -54,12 +54,9 @@ public class RegistrationPage extends AppCompatActivity {
                 }
             }
         });
-        cb1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    cb2.setChecked(false);
-                }
+        cb1.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                cb2.setChecked(false);
             }
         });
 
@@ -74,11 +71,11 @@ public class RegistrationPage extends AppCompatActivity {
 
         user = new User(userEmail, userPassword, userName, userFamilyName);
 
-        if(cb1.isChecked()){
+        if (cb1.isChecked()) {
             user.setUserType("student");
 //            user.setDesiredCourses(User.Courses.Linear_Algebra1);
 //            user.setDesiredCourses(User.Courses.Number_Theory);
-        }else user.setUserType("tutor");
+        } else user.setUserType("tutor");
 
 
         mAuth.createUserWithEmailAndPassword(userEmail, userPassword)
@@ -92,13 +89,13 @@ public class RegistrationPage extends AppCompatActivity {
                             FirebaseUser fireUser = mAuth.getCurrentUser();
                             String keyid = fireUser.getUid();
                             mDatabase.child(keyid).setValue(user); //adding user info to database
-                            if(user.getUserType() == "tutor") {
+                            if (user.getUserType().equals("tutor")) {
                                 //move to MoreInfo page.
                                 Intent intentMoreInfo = new Intent(RegistrationPage.this, MoreInfo.class);
-                                intentMoreInfo.putExtra("keyid",keyid);
+                                intentMoreInfo.putExtra("keyid", keyid);
                                 startActivity(intentMoreInfo);
                             }
-                            if(user.getUserType() == "student") {
+                            if (user.getUserType().equals("student")) {
                                 //move to FilterFeed page.
                                 Intent intentFilterFeed = new Intent(RegistrationPage.this, FilterFeed.class);
                                 //intentMoreInfo.putExtra("keyid",keyid);
@@ -114,9 +111,7 @@ public class RegistrationPage extends AppCompatActivity {
                 });
 
 
-
     }
-
 
 
 }

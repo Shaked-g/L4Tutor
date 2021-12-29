@@ -1,14 +1,17 @@
 package com.example.l4tutor2;
 
+import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class User {
+
+
     public enum Courses {
-        Linear_Algebra1, Linear_Algebra2, Number_Theory, Infinitesimal_Calculus1,Infinitesimal_Calculus2,
-        Discrete_Mathematics, Logic_and_set_theory, Java, Data_Structures,Object_Oriented,
+        Linear_Algebra1, Linear_Algebra2, Number_Theory, Infinitesimal_Calculus1, Infinitesimal_Calculus2,
+        Discrete_Mathematics, Logic_and_set_theory, Java, Data_Structures, Object_Oriented,
     }
+
 
     private String FirstName;
     private String LastName;
@@ -17,16 +20,19 @@ public class User {
     private String UserType;  // "student" or "tutor"
     private String Password;
     boolean MeetingTypePreference; // zoom or frontal
-
     private int DesiredPayment;
-    private List<Courses> DesiredCourses = new ArrayList<>();
+    private ArrayList<String> desiredCourses = new ArrayList<>();
+
+    public ArrayList<String> getDesiredCourses() {
+        return desiredCourses;
+    }
+
+    public void setDesiredCourses(ArrayList<String> desireCour) {
+        this.desiredCourses = desireCour;
+    }
 
 
-
-
-
-
-    Courses newCourse = Courses.Linear_Algebra1; // example
+    //Courses newCourse = Courses.Linear_Algebra1; // example
 
 
     // Constructor //
@@ -42,7 +48,7 @@ public class User {
         this.LastName = familyName;
     }
 
-    public User(User tutor,String phoneNumber,int price){
+    public User(User tutor, String phoneNumber, int price) {
         this.FirstName = tutor.getFirstName();
         this.LastName = tutor.getLastName();
         this.EmailAddress = tutor.getEmailAddress();
@@ -59,7 +65,7 @@ public class User {
         this.UserType = userType;
     }
 
-    private boolean CreateTutor(){
+    private boolean CreateTutor() {
         return true;
     }
 
@@ -109,20 +115,22 @@ public class User {
     }
 
 
-    public String getLastName() { return LastName; }
+    public String getLastName() {
+        return LastName;
+    }
 
     public void setLastName(String lastName) {
         LastName = lastName;
     }
 
 
-    public List getDesiredCourses() {
+   /* public List<Courses> getDesiredCourses() {
         return this.DesiredCourses;
     }
 
     public void setDesiredCourses(Courses desiredCourses) {
         this.DesiredCourses.add(desiredCourses);
-    }
+    }*/
 
 
     public String getPassword() {

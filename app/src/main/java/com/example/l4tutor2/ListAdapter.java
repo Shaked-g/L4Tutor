@@ -1,6 +1,9 @@
 package com.example.l4tutor2;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,21 +22,23 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
-public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder>{
+public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder> {
 
-    private ArrayList<User> userList;
+    private final ArrayList<User> userList;
+    private final boolean isFilter;
+    private final Context context;
 
-    public ListAdapter(ArrayList<User> userList) {
+    public ListAdapter(Context context, ArrayList<User> userList, boolean isFilter) {
         this.userList = userList;
+        this.isFilter = isFilter;
+        this.context = context;
     }
-
-
 
 
     @NonNull
     @Override
     public ListAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_feed,parent,false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_user, parent, false);
         return new MyViewHolder(v);
 
     }
@@ -41,11 +46,36 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder>{
     @Override
     public void onBindViewHolder(@NonNull ListAdapter.MyViewHolder holder, int position) {
         User user = userList.get(position);
+        //Log.e("user", "is" + user.getDesiredCourses().size());
         holder.firstName.setText(user.getFirstName());
         holder.lastName.setText(user.getLastName());
-        holder.courses.setText((CharSequence) user.getDesiredCourses());
-        holder.price.setText(user.getDesiredPayment());
+        StringBuilder builder = new StringBuilder();
+        for (String course :
+                user.getDesiredCourses()) {
+            builder.append(course);
+            builder.append(",");
+            //holder.courses.append(course + ", ");
+        }
+        holder.courses.setText(builder.toString());
+        holder.price.setText("" + user.getDesiredPayment());
         holder.phoneNumber.setText(user.getPhoneNumber());
+
+        holder.itemView.setOnClickListener(view -> {
+            if (isFilter) {
+                try {
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    String url = "https://api.whatsapp.com/send?phone=" + user.getPhoneNumber();
+                    i.setPackage("com.whatsapp");
+                    i.setData(Uri.parse(url));
+                    context.startActivity(i);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    Uri uri = Uri.parse("market://details?id=com.whatsapp");
+                    Intent goToMarket = new Intent(Intent.ACTION_VIEW, uri);
+                    context.startActivity(goToMarket);
+                }
+            }
+        });
 
 
     }
@@ -55,7 +85,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.MyViewHolder>{
         return userList.size();
     }
 
-    public static class MyViewHolder extends RecyclerView.ViewHolder{
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
 
         public TextView firstName, lastName, courses, phoneNumber, price;
 
