@@ -94,38 +94,6 @@ public class FilterFeed extends AppCompatActivity {
             desiredCourse.add(String.valueOf(User.Courses.Object_Oriented));
 
 
-        //user.setDesiredCourses(desiredCourse);
-
-        // NEEDS TO BRING BACK TUTOR-USERS FROM FIREBASE WITH DESIRED PAYMENT IN THE RANGE OF USER CHOSEN studentAskPrice
-
-//        Query tutorPriceQuery = mDatabase.orderByChild("desiredPayment");
-//       // tutorPriceQuery.equalTo();
-//        Toast.makeText(FilterFeed.this,"tutorPriceQuery "+ tutorPriceQuery,Toast.LENGTH_LONG).show();
-//
-//        tutorPriceQuery.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//                for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
-//
-//                Toast.makeText(FilterFeed.this,"data query result "+ postSnapshot.getValue().toString(),Toast.LENGTH_LONG).show();
-//                    Object newUser = postSnapshot.getValue();
-//                    newUser
-//                    Toast.makeText(FilterFeed.this,"newUser "+ newUser["desiredPayment"],Toast.LENGTH_LONG).show();
-//
-//                    // TODO: handle the post
-//                }
-//            }
-//
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {
-//                // Getting Post failed, log a message
-//                Toast.makeText(FilterFeed.this,"data query FAILED ",Toast.LENGTH_LONG).show();
-//
-//                // Log.w(TAG, "loadPost:onCancelled", databaseError.toException());
-//                // ...
-//            }
-//        });
-
         // TO BE CHANGED
         mDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override

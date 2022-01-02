@@ -62,9 +62,10 @@ public class MoreInfo extends AppCompatActivity {
     }
 
     public void RegisterMoreInfo(View view) {
-        String tutorPhone = PhoneEditText.getText().toString();
-        mDatabase.child(keyid).child("phoneNumber").setValue(tutorPhone);
+        String tutorPhone = "05" + PhoneEditText.getText().toString();
         int tutorPrice = Integer.parseInt(PriceEditText.getText().toString());
+        mDatabase.child(keyid).child("phoneNumber").setValue(tutorPhone);
+
         mDatabase.child(keyid).child("desiredPayment").setValue(tutorPrice);
         // List<User.Courses> DesiredCourses = new ArrayList<>(); // can use local desired courses instead.
         // user = new User(user,tutorPhone,tutorPrice);

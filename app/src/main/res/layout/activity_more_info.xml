@@ -9,21 +9,25 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/PriceInputLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="351dp"
-        android:layout_height="52dp"
+        android:layout_width="350dp"
+        android:layout_height="86dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="5dp"
         android:hint="Phone Number"
         app:counterEnabled="true"
         app:counterMaxLength="8"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/InputLayout"
-        app:prefixText="05">
+        app:prefixText="+972-5"
+        app:prefixTextColor="@color/purple_500">
+
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/PhonetextInputEditText"
             android:layout_width="match_parent"
-            android:layout_height="53dp"
-            android:layout_marginTop="400dp" />
+            android:layout_height="56dp"
+            android:layout_marginTop="400dp"
+            android:maxLength="8" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -46,7 +50,7 @@
         android:id="@+id/OOP_checkBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="17dp"
+        android:layout_marginEnd="15dp"
         android:checked="false"
         android:clickable="true"
         android:duplicateParentState="false"
@@ -59,7 +63,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="28dp"
+        android:layout_marginEnd="17dp"
         android:checked="false"
         android:clickable="true"
         android:duplicateParentState="false"
@@ -95,6 +99,7 @@
         android:id="@+id/Discrete_checkBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:checked="false"
         android:clickable="true"
         android:duplicateParentState="false"
@@ -107,6 +112,7 @@
         android:id="@+id/Infi2_checkBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="6dp"
         android:checked="false"
@@ -134,7 +140,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginEnd="13dp"
+        android:layout_marginEnd="8dp"
         android:checked="false"
         android:clickable="true"
         android:duplicateParentState="false"
@@ -199,7 +205,7 @@
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="21dp"
+        android:layout_marginTop="25dp"
         android:layout_marginEnd="25dp"
         android:onClick="RegisterMoreInfo"
         android:text="הירשם !"
